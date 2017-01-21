@@ -2,20 +2,22 @@ import tornado.ioloop
 import tornado.web
 import os
 
+here = os.path.dirname(os.path.abspath(__file__))
+
 
 class Handler(tornado.web.RequestHandler):
     def get(self, *args, **kwargs):
         images = []
+        files = os.listdir(os.path.join(here, 'static/images/'))
 
-        for i in range(4):
-            path = os.path.join('/static/images/', '{}.png'.format(i))
+        for i in files:
+            path = os.path.join('/static/images/', i)
             images.append(path)
 
         self.render('index.html', images=images)
 
 
 def make_app():
-    here = os.path.dirname(os.path.abspath(__file__))
     application = tornado.web.Application([
         ('/', Handler),
         ('/static/(.*)', tornado.web.StaticFileHandler, {'path': os.path.join(here, 'static')})],
