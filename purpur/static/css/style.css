@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+
+body {
+    margin: 0;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    color: #8a7cb8;
+    font-size: 40px;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+ul {
+    display: flex;
+    flex: wrap;
+}
+
+li {
+    display: block;
+    float: left;
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+.image {
+    height: 200px;
+    width: 300px;
+    background-size: contain;
+}

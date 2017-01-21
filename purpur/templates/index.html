@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>mam plz</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Pixel Treat</h1>
+    <ul>
+    {% for image in images %}
+        <li>
+            <img class="image" src="{{ image }}">
+        </li>
+    {% end %}
+    </ul>
+</body>
+</html>
